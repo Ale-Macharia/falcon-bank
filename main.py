@@ -8,7 +8,7 @@ account = {
     "transactions":[]
 }
 
-print(f"Starting ballance: KSh {account['balance']:.2f}")
+print(f"Starting balance: KSh {account['balance']:.2f}")
 
 print()
 
