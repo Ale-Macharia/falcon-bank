@@ -1,10 +1,12 @@
 import java.math.BigDecimal;
 
-public class Users {
-        String name;
-        int id_number;
-        BigDecimal bank_balance;
-        String account_number;
+public class Users{
+        public String name;
+        public int id_number;
+        public BigDecimal bank_balance;
+        public String account_number;
+
+        
         
 
         public Users(String name, int id_number, BigDecimal bank_balance){
@@ -15,21 +17,22 @@ public class Users {
             this.account_number = "A1_" + id_number;
         }
 
-        public BigDecimal withdraw_cash(BigDecimal amount, BigDecimal bank_balance){
+        public BigDecimal withdraw_cash(BigDecimal amount){
             if (amount.compareTo(BigDecimal.ZERO) <= 0){
                 System.out.println("Withdrawals must be more than KSH 0!");
+
                 return bank_balance;
             }
 
             if (amount.compareTo(bank_balance) > 0) {
-                System.out.println("\n\nInsuficent funds in your account !! \nDeposit to your account and try again.\nThank you for using Falcon eWallet"); 
+                System.out.println("\n\nInsuficent funds "); 
                 
                 return bank_balance;
             }
 
             bank_balance = bank_balance.subtract(amount);
 
-            System.out.println("Transuction succesfull, new wallet balance is: KSh " +bank_balance);
+            System.out.println("Transuction succesful. New wallet balance is: KSh " +bank_balance);
             return bank_balance;
         }
 
